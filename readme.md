@@ -137,3 +137,13 @@ is worked out by calculating the character which has the highest
 A boolean representing whether nodebook believes the book
 is written in first person. This is worked out by counting the occurrences
 of the pronoun *"I"* outside quotation marks.
+
+## Using native NetworkX functions
+
+A `book` object contains a native NetworkX graph `G`, on which you can perform native Networkx methods. For example
+
+```python
+myBook = book('my_book.json')
+centrality = networkx.betweenness_centrality(myBook.G)
+```
+
