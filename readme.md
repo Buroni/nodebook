@@ -9,7 +9,7 @@ importances and interactions.
 Dependencies are `SpaCy`, `matplotlib` and `networkx 1.11`. Install using the commands below.
 
 ```
-git clone /this/repo.git
+git clone https://github.com/Buroni/nodebook.git
 pip install spacy
 pip install networkx --version==1.11 
 pip install matplotlib
