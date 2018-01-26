@@ -49,7 +49,12 @@ sherlock.graph(with_labels=True, node_size=200)
 
 ```
 
-This example will produce the following graph:
+This example will produce the following:
+
+```python
+Most central characters: [u'Holmes', u'McCarthy', u'Openshaw', u'Simon', u'Rucastle', u'Mary', u'Hunter', u'Watson']
+Point of view: third person
+```
 
 ![Sherlock Graph](sherlock_graph.png)
 
