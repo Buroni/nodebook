@@ -1,10 +1,10 @@
-#Nodebook
+# Nodebook
 
 Nodebook is a little python library which extracts characters from plain text books and 
 uses graph theory to perform analyses on character types,
 importances and interactions. 
 
-##Installation
+## Installation
 
 Dependencies are `SpaCy`, `matplotlib` and `networkx 1.11`. Install using the commands below.
 
@@ -22,11 +22,11 @@ nodebook folder:
 PYTHONPATH=/path/to/parent/:$PYTHONPATH
 ```
 
-##Usage
+## Usage
 
 There are several examples in the 'examples' directory which show some different usages.
 
-###Drawing a character graph
+### Drawing a character graph
 This quick example uses nodebook to find the main character in 
 Arthur Conan Doyle's *The Adventures of Sherlock Holmes*, displays 
 a graph of characters and dumps the graph
@@ -53,7 +53,7 @@ This example will produce the following graph:
 
 ![Sherlock Graph](sherlock_graph.png)
 
-###Performance
+### Performance
 
 After the first time the plain text file is processed,
 it is recommended to `dump` the graph into a json file and load
@@ -65,9 +65,9 @@ than a full book.
 lotr = book("fellowship.json")
 ```
 
-##Documentation
+## Documentation
 
-####`book(file_path, char_min_count=2, interaction_measure="same_line", blacklist=[])`
+#### `book(file_path, char_min_count=2, interaction_measure="same_line", blacklist=[])`
 
 Initialise a new `book` object. 
 
@@ -89,18 +89,18 @@ interacts with Jake through the verb *talks*.
 `blacklist` is a list of names which should be ignored when
 looking for characters.
 
-###`dump(cache_file)`
+### `dump(cache_file)`
 
 Dump the current book object into a json file with name specified
 by the variable `cache_file`.
 
-###`graph(with_labels=True, node_size=400)`
+### `graph(with_labels=True, node_size=400)`
 
 Draw a matplotlib graph of characters connected by edges representing
  interactions, and colour-coded by
 their degree.
 
-###`important_characters(num, metric="degree")`
+### `important_characters(num, metric="degree")`
 
 Return a list of important characters in descending order by some
 metric. The metric can be:
@@ -112,14 +112,14 @@ character in the graph.
 * `"centrality"` -- measure by the [betweenness centrality](https://en.wikipedia.org/wiki/Betweenness_centrality) of each character
 in the graph.
 
-##Class member variables
+## Class member variables
 
-###char_list
+### char_list
 
 A list of strings representing the names of characters found
 during analysis of the book.
 
-###first_person
+### first_person
 
 A string representing who nodebook thinks the first person is,
 if the book is first person. Otherwise defaults to `None`. This 
@@ -127,7 +127,7 @@ is worked out by calculating the character which has the highest
 [neighbourhood overlap](http://eng.uok.ac.ir/esmaili/teaching/spring2012/sna/slides/Lecture2.pdf) with `[FP]` (the "first person" character tag).
 
 
-###is_first_person
+### is_first_person
 
 A boolean representing whether nodebook believes the book
 is written in first person. This is worked out by counting the occurrences
